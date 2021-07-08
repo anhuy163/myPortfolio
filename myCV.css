@@ -115,7 +115,9 @@ ul,li{
 h1, h2, h3, a{
     text-emphasis: none;
 }
-
+h1.smaller{
+    font-size: 4.5rem;
+}
 @media screen and (max-width: 862px) {
     ul.topnav{
         display: none;
@@ -146,9 +148,9 @@ h1, h2, h3, a{
         margin-left: 20px;
     }
 }
-@media  screen and (max-width: 470  px) {
+@media  screen and (max-width: 470px) {
     h1.smaller{
-        font-size: 3.5rem;
+        font-size: 3rem;
     }
     li{
         margin-left: 10px;

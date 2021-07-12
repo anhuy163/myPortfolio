@@ -147,15 +147,23 @@
         </main>
         <!-- <button onclick="topFunction()" id="myBtn" title="Go to top">TOP</button> -->
         <script>
-            function myFunction(){
+            function myFunction() {
                 var x = document.getElementById("menu_selection");
-                if(x.style.display==="block"){
-                    x.style.display = "none";
-                }
-                else{
-                    x.style.display = "block";
+                if (x.className === "topnav") {
+                    x.className += " responsive";
+                } else {
+                    x.className = "topnav";
                 }
             }
+            // function myFunction(){
+            //     var x = document.getElementById("menu_selection");
+            //     if(x.style.display==="block"){
+            //         x.style.display = "none";
+            //     }
+            //     else{
+            //         x.style.display = "block";
+            //     }
+            // }
             tmp = ScrollReveal({
                 origin: 'left',
                 distance: '50px',

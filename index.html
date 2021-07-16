@@ -12,9 +12,11 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src="https://unpkg.com/scrollreveal"></script>
         <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+        <script src="myCV_js.js"></script>
     </head>
     <body style="height: 100%;">
         <script src="https://unpkg.com/scrollreveal"></script>
+        <script src="myCV_js.js"></script>
         <div class="header_1" style="background-color: rgb(26,42,131);">
             <nav class="nav">
                 <div>
@@ -22,12 +24,12 @@
                 </div>
                 <div>
                     <ul class="topnav" id="menu_selection">
-                        <li class="left"><a href=""><i class="fa fa-home" style="margin-right: 5px"></i>Home</a></li>
-                        <li class="left"><a href="#last_name"><i class="fa fa-search" style="color: white;margin-right: 5px;"></i>About</a></li>
-                        <li class="left"><a href="#education"><i class="fa fa-book" style="color: white;margin-right: 5px;"></i>Education</a></li>
-                        <li class="left"><a href="#skills"><i class="fa fa-pencil" style="color: white;margin-right: 5px;"></i>Skills</a></li>
-                        <li class="left"><a href="#projects"><i class="fa fa-desktop" style="color: white;margin-right: 5px;"></i>Projects</a></li>
-                        <li class="left"><a href="#contact"><i class="fa fa-phone" style="color: white;margin-right: 5px;"></i>Contact</a></li>  
+                        <li class="left"><a class="nav_selection active" href=""><i class="fa fa-home" style="margin-right: 5px"></i>Home</a></li>
+                        <li class="left"><a class="nav_selection" href="#last_name"><i class="fa fa-search" style="color: white;margin-right: 5px;"></i>About</a></li>
+                        <li class="left"><a class="nav_selection" href="#education"><i class="fa fa-book" style="color: white;margin-right: 5px;"></i>Education</a></li>
+                        <li class="left"><a class="nav_selection" href="#skills"><i class="fa fa-pencil" style="color: white;margin-right: 5px;"></i>Skills</a></li>
+                        <li class="left"><a class="nav_selection" href="#projects"><i class="fa fa-desktop" style="color: white;margin-right: 5px;"></i>Projects</a></li>
+                        <li class="left"><a class="nav_selection" href="#contact"><i class="fa fa-phone" style="color: white;margin-right: 5px;"></i>Contact</a></li>  
                     </ul>
                 </div>
                 <a style="margin-right: 20px;" href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -147,6 +149,19 @@
         </main>
         <!-- <button onclick="topFunction()" id="myBtn" title="Go to top">TOP</button> -->
         <script>
+            
+            // // Make menu bar can change active selection
+            var header = document.getElementById("menu_selection");
+            var slc = header.getElementsByClassName("nav_selection");
+            for(var i=0; i < slc.length; i++){
+                slc[i].addEventListener("click", function(){
+                    var cur = document.getElementsByClassName("active");
+                    cur[0].className = cur[0].className.replace("active","");
+                    this.className += " active";
+                });
+            }
+
+            // // Make responsive website
             function myFunction() {
                 var x = document.getElementById("menu_selection");
                 if (x.className === "topnav") {
@@ -155,15 +170,8 @@
                     x.className = "topnav";
                 }
             }
-            // function myFunction(){
-            //     var x = document.getElementById("menu_selection");
-            //     if(x.style.display==="block"){
-            //         x.style.display = "none";
-            //     }
-            //     else{
-            //         x.style.display = "block";
-            //     }
-            // }
+
+            // // Scroll to reveal
             tmp = ScrollReveal({
                 origin: 'left',
                 distance: '50px',

@@ -144,6 +144,9 @@ h1.smaller{
     background-color: rgb(211, 223, 238);
 }
 @media screen and (max-width: 862px) {
+    /* .logo-left{
+        display: none;
+    } */
     ul.topnav li{display: none;}
     ul.topnav.responsive{
         position: relative;
